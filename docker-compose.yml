@@ -1,0 +1,25 @@
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: api_tarefas
+
+    ports:
+      - "8000:8000"
+
+    environment:
+      DATABASE_URL: "sqlite+aiosqlite:////app/data/tarefas.db"
+      API_USERNAME: "${API_USERNAME:-lucas}"
+      API_PASSWORD: "${API_PASSWORD:-123456}"
+
+    volumes:
+      - .:/app
+      - tarefas_dados:/app/data
+
+    restart: unless-stopped
+
+volumes:
+  tarefas_dados:

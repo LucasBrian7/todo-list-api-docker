@@ -1,0 +1,21 @@
+
+[project]
+name = "todo-list-api"
+version = "0.1.0"
+description = "API de tarefas com FastAPI, SQLAlchemy e SQLite"
+authors = [
+    { name = "Lucas Brian" }
+]
+requires-python = ">=3.12,<4.0"
+dependencies = [
+    "fastapi[standard]>=0.115,<1.0",
+    "sqlalchemy[asyncio]>=2.0,<3.0",
+    "aiosqlite>=0.20,<1.0",
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
